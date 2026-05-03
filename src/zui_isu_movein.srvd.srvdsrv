@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for ZISU_MOVEIN'
+define service ZUI_ISU_MOVEIN {
+  expose ZC_ISU_MOVEIN as Contract;
+}

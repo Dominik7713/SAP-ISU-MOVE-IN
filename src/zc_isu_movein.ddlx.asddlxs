@@ -1,0 +1,42 @@
+@Metadata.layer: #CORE
+annotate entity ZC_ISU_MOVEIN
+    with 
+{
+    @UI.facet: [ { id:              'Contract',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Contract Details',
+                 position:        10 } ]
+                 
+  
+  @UI: { lineItem:       [ { position: 10, label: 'Contract ID' } ],
+         identification: [ { position: 10, label: 'Contract ID' } ],
+         selectionField: [ { position: 10 } ] }
+  ContractId;
+  
+  @UI: { lineItem:       [ { position: 20, label: 'Customer Name' } ],
+         identification: [ { position: 20, label: 'Customer Name' } ],
+         selectionField: [ { position: 20 } ] }
+  CustomerName;
+  
+  @UI: { lineItem:       [ { position: 30, label: 'Move-In Date' } ],
+         identification: [ { position: 30, label: 'Move-In Date' } ] }
+  MoveInDate;
+  
+  @UI: { lineItem:       [ { position: 40, label: 'Status' } ],
+         identification: [ { position: 40, label: 'Status' } ] }
+  Status;
+  
+  @UI: { lineItem:       [ { position: 50, label: 'Equipment ID' } ],
+         identification: [ { position: 50, label: 'Equipment ID' } ],
+         selectionField: [ { position: 30 } ] }
+  EquipId;
+  
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  ChangedAt;
+    
+}

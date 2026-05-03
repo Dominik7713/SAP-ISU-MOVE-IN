@@ -1,0 +1,36 @@
+managed implementation in class zbp_i_isu_movein unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_ISU_MoveIn alias Contract
+persistent table zisu_cont_bmd
+draft table zisu_cont_d
+lock master
+total etag ChangedAt
+authorization master ( global )
+etag master ChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) ContractId;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zisu_cont_bmd
+  {
+    ContractId = contract_id;
+    CustomerName = customer_name;
+    MoveInDate = move_in_date;
+    Status = status;
+    EquipId = equip_id;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    ChangedAt = changed_at;
+  }
+}

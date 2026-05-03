@@ -26,7 +26,7 @@ CLASS zisu_movein_fill IMPLEMENTATION.
 
          DATA: contract_data TYPE TABLE OF zisu_cont_bmd.
             contract_data = VALUE #(
-            ( contract_id = '1' customer_name = 'Dominik Balogh' status = 'A' equip_id = '0000000002' )
+            ( contract_id = '1' customer_name = 'Dominik Balogh' status = 'A' equip_id = '0000000002' move_in_date = '20260101' changed_at = '20260506')
             ).
 
         MODIFY zisu_cont_bmd FROM TABLE @contract_data.
