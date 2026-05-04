@@ -10,10 +10,12 @@ define root view entity ZC_ISU_MOVEIN
     key ContractId,
     
     @Search.defaultSearchElement: true
+    @Search.fuzzinessThreshold: 0.8
     CustomerName,
     
     MoveInDate,
     
+    @Search.defaultSearchElement: true
     Status,
     
     @Search.defaultSearchElement: true
@@ -22,6 +24,13 @@ define root view entity ZC_ISU_MOVEIN
     CreatedBy,
     CreatedAt,
     ChangedAt,
+    
+    @Search.defaultSearchElement: true
+    _Equipment.city as EquipCity,
+    
+    _Equipment.street as EquipStreet,
+    _Equipment.meter_reading as EquipReading,
+    _Equipment.uom as EquipUOM,
 
-    _Equipment 
+    _Equipment
 }

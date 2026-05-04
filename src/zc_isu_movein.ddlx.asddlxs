@@ -1,22 +1,37 @@
 @Metadata.layer: #CORE
+
+@UI.headerInfo: {
+  typeName:       'Contract',
+  typeNamePlural: 'Contracts',
+  title:          { type: #STANDARD, value: 'ContractId' },
+  description:    { type: #STANDARD, value: 'CustomerName' }
+}
+
 annotate entity ZC_ISU_MOVEIN
     with 
 {
-    @UI.facet: [ { id:              'Contract',
+    @UI.facet: [ 
+                 { id:              'Contract',
                  purpose:         #STANDARD,
                  type:            #IDENTIFICATION_REFERENCE,
                  label:           'Contract Details',
-                 position:        10 } ]
-                 
+                 position:        10 },
+    
+                 { id:              'Equipment',
+                 purpose:         #STANDARD,
+                 type:            #FIELDGROUP_REFERENCE,
+                 targetQualifier: 'EquipGroup',
+                 label:           'Equipment Details',
+                 position:        20 }         
+               ]                 
   
   @UI: { lineItem:       [ { position: 10, label: 'Contract ID' } ],
-         identification: [ { position: 10, label: 'Contract ID' } ],
-         selectionField: [ { position: 10 } ] }
+         identification: [ { position: 10, label: 'Contract ID' } ] }
   ContractId;
   
   @UI: { lineItem:       [ { position: 20, label: 'Customer Name' } ],
-         identification: [ { position: 20, label: 'Customer Name' } ],
-         selectionField: [ { position: 20 } ] }
+         identification: [ { position: 20, label: 'Customer Name' } ] }
+        // selectionField: [ { position: 20 } ] }
   CustomerName;
   
   @UI: { lineItem:       [ { position: 30, label: 'Move-In Date' } ],
@@ -28,8 +43,7 @@ annotate entity ZC_ISU_MOVEIN
   Status;
   
   @UI: { lineItem:       [ { position: 50, label: 'Equipment ID' } ],
-         identification: [ { position: 50, label: 'Equipment ID' } ],
-         selectionField: [ { position: 30 } ] }
+         identification: [ { position: 50, label: 'Equipment ID' } ] }
   EquipId;
   
   @UI.hidden: true
@@ -38,5 +52,23 @@ annotate entity ZC_ISU_MOVEIN
   CreatedAt;
   @UI.hidden: true
   ChangedAt;
+  
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 10, label: 'City' } ],
+         lineItem:       [ { position: 60, label: 'City' } ]
+        }
+  EquipCity;
+  
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 10, label: 'Street' } ] }
+  EquipStreet;
+
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 20, label: 'Reading' } ],
+         lineItem:       [ { position: 70, label: 'Meter Reading' } ]
+       }
+  EquipReading;
+  
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 20, label: 'UOM' } ],
+         lineItem:       [ { position: 80, label: 'UOM' } ]
+       }
+  EquipUOM;
     
 }

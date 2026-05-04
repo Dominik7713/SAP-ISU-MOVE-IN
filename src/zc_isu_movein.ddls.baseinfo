@@ -3,7 +3,8 @@
 {
 "FROM":
 [
-"ZI_ISU_MOVEIN"
+"ZI_ISU_MOVEIN",
+"ZISU_EQUIP_TMD"
 ],
 "ASSOCIATED":
 [
