@@ -6,9 +6,9 @@ define behavior for ZI_ISU_MoveIn alias Contract
 persistent table zisu_cont_bmd
 draft table zisu_cont_d
 lock master
-total etag ChangedAt
-authorization master ( global )
-etag master ChangedAt
+total etag ChangedAt // optimistic concurrency (if ChangedAt has changed, SAP will notify)
+authorization master ( global ) // get_global_authorizations method for the behavior handler
+etag master ChangedAt // etag = entity tag (individual record locking)
 {
   create;
   update;
