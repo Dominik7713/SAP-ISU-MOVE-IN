@@ -23,7 +23,7 @@ CLASS zisu_movein_fill IMPLEMENTATION.
 
         MODIFY zisu_equip_tmd FROM TABLE @equipment_data.
 
-                IF sy-subrc <> 0.
+        IF sy-subrc <> 0.
             out->write( 'Error' ).
         ELSE.
             out->write( |Count: { sy-dbcnt } | ).

@@ -53,21 +53,21 @@ annotate entity ZC_ISU_MOVEIN
   @UI.hidden: true
   ChangedAt;
   
-  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 10, label: 'City' } ],
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 60, label: 'City' } ],
          lineItem:       [ { position: 60, label: 'City' } ]
         }
   EquipCity;
   
-  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 10, label: 'Street' } ] }
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 70, label: 'Street' } ] }
   EquipStreet;
 
-  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 20, label: 'Reading' } ],
-         lineItem:       [ { position: 70, label: 'Meter Reading' } ]
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 80, label: 'Reading' } ],
+         lineItem:       [ { position: 80, label: 'Meter Reading' } ]
        }
   EquipReading;
   
-  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 20, label: 'UOM' } ],
-         lineItem:       [ { position: 80, label: 'UOM' } ]
+  @UI: { fieldGroup: [ { qualifier: 'EquipGroup', position: 90, label: 'UOM' } ],
+         lineItem:       [ { position: 90, label: 'UOM' } ]
        }
   EquipUOM;
     
